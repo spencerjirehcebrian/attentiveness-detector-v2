@@ -1,0 +1,116 @@
+html, body {
+    background-color: black;
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Stack elements vertically */
+}
+
+.header {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    margin-bottom: 20px; /* Space below the header */
+}
+
+.header h1 {
+    margin-right: 20px; /* Space between title and logo */
+    text-align: center; /* Center the title */
+}
+
+.school-logo {
+    height: 50px; /* Adjust the height of the logo */
+    width: auto; /* Maintain aspect ratio */
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+}
+
+.video-container {
+    position: relative;
+    width: 640px;
+    height: 480px;
+    border: 2px solid white;
+    margin-right: 20px;
+}
+
+#video {
+    width: 100%;
+    height: 100%;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.statistics, .summary-statistics, .detection-history {
+    color: white;
+    font-size: 1.2em;
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.scrollable {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.thumbnail {
+    margin: 5px;
+    cursor: pointer;
+}
+
+.thumbnail img {
+    width: 100px;
+    height: auto;
+}
+
+#image-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    z-index: 100;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+#image-modal img {
+    max-width: 400px;
+    max-height: 400px;
+}
+
+#fps {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+}
+
+#fps:empty {
+    display: none;
+}
+
+#fps:after {
+    content: " fps";
+}

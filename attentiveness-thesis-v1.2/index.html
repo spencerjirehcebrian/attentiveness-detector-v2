@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roboflow Demo</title>
+    <link rel="stylesheet" href="./main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/async/3.2.0/async.min.js"></script>
+    <script src="https://cdn.roboflow.com/0.2.26/roboflow.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./main.js" defer></script>
+</head>
+<body class="loading">
+    <header class="header">
+        <h1>Real-Time Attentiveness Monitoring among Mapúa University Students</h1>
+        <img src="C:/Users/Marku/Downloads/attentiveness-thesis-v1.2/4720451.png" alt="Mapúa University Logo" class="school-logo">
+    </header>
+    <div class="main-container">
+        <div class="video-container">
+            <video id="video" autoplay muted playsinline></video>
+            <canvas id="overlay"></canvas>
+        </div>
+        <div class="sidebar">
+            <div class="checkbox-group">
+                <label><input type="checkbox" id="attentive-checkbox" checked> Attentive</label>
+                <label><input type="checkbox" id="inattentive-checkbox" checked> Inattentive</label>
+                <label><input type="checkbox" id="phone-checkbox" checked> Phone Detected</label> <!-- Added phone checkbox -->
+            </div>
+            <div class="statistics">
+                <p id="students-count">Students within the frame: 0</p>
+                <p id="attentiveness-percentage">Attentiveness Percentage: 0% of students are attentive</p>
+                <p id="phones-count">Phones within the frame detected: 0</p>
+                <div id="fps"></div>
+            </div>
+            <div class="detection-history">
+                <h3>Student Detection History</h3>
+                <div id="thumbnails" class="scrollable"></div>
+            </div>
+            <div class="summary-statistics">
+                <h3>Summary Statistics</h3>
+                <canvas id="attentiveness-chart" width="400" height="200"></canvas>
+                <div id="detection-count"></div>
+            </div>
+        </div>
+    </div>
+    <div id="image-modal" style="display:none;">
+        <span id="close-modal" style="cursor:pointer;">&times;</span>
+        <img id="modal-image" src="" alt="Enlarged Student Image"/>
+        <div id="modal-info"></div>
+    </div>
+</body>
+</html>
